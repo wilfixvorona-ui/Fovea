@@ -41,7 +41,12 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* overflow-x:hidden guards against the few full-bleed `width:100vw`
+   dividers (process/services) reading a fraction of a px wider than
+   the page whenever the vertical scrollbar reserves real layout space —
+   100vw includes the scrollbar, clientWidth doesn't. Never intentional
+   horizontal scroll anywhere on this site, so this is a safe backstop. */
+html { scroll-behavior: smooth; overflow-x: hidden; }
 img, video { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
