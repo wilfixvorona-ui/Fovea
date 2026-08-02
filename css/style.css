@@ -1877,8 +1877,8 @@ h1, h2, h3, h4 {
 
   .hero__content {
     grid-template-columns: 1fr;
-    padding-bottom: 56px;
-    gap: 32px;
+    padding-bottom: 150px;
+    gap: 24px;
   }
 
   .hero__aside {
